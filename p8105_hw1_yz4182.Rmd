@@ -1,5 +1,6 @@
 ---
 title: "p8105_hw1_yz4182"
+author: Yujin Zhang
 output: github_document
 ---
 
@@ -27,11 +28,10 @@ mean(pull(hw_tbl1,norm_samp))
 mean(pull(hw_tbl1,vec_logical))
 mean(pull(hw_tbl1,vec_char))
 mean(pull(hw_tbl1,vec_factor))
-
-# The results show that mean function works on the first two vectors, but not on the last two for the reason that they are not numeric or logical. 
 ```
+The results show that mean function works on the first two vectors, but not on the last two for the reason that they are not numeric or logical. 
 
-## Applies 'as.numeric' function to the logical, character, and factor variables. 
+## Problem 1 supplement (Applies 'as.numeric' function to the logical, character, and factor variables.) 
 
 ```{r, echo = TRUE, results = 'hide'}
 num_logical = hw_tbl1$vec_logical
@@ -43,14 +43,16 @@ as.numeric = (num_char)
 num_factor = hw_tbl1$vec_factor
 as.numeric = (num_factor)
 
-# The logical variables can be changed into numeric, but the character and factor variables cannot. This explains why in the above chunk, the last two vector cannot be taken the mean.
 ```
+The logical variables can be changed into numeric, but the character and factor variables cannot. This explains why in the above chunk, the last two vector cannot be taken the mean.
+
 
 ## For problem 2
 
-Input the data "penguins" and describe the dataset. Then made a scatterplot of flipper_length_mm (y) vs bill_length_mm (x).
 
 ```{r}
+# Input the data "penguins" and describe the dataset. Then made a scatterplot of flipper_length_mm (y) vs bill_length_mm (x).
+
 data("penguins", package = "palmerpenguins")
 
 head(penguins)
