@@ -5,6 +5,7 @@ output: github_document
 
 ```{r, echo = FALSE, message = FALSE}
 library(tidyverse)
+library(ggplot2)
 ```
 
 ## For problem 1: to create a data frame.
@@ -46,14 +47,18 @@ as.numeric = (num_factor)
 ```
 
 ## For problem 2
+
+Input the data "penguins" and describe the dataset. Then made a scatterplot of flipper_length_mm (y) vs bill_length_mm (x).
+
 ```{r}
+data("penguins", package = "palmerpenguins")
 
+head(penguins)
+nrow(penguins)
+ncol(penguins)
+mean(pull(penguins, flipper_length_mm), na.rm = TRUE)
 
-
-
-
-
-
-
+ggplot(penguins, aes(x = bill_length_mm, y = flipper_length_mm)) + geom_point(aes(color = species))
+ggsave("penguins.pdf", height = 4, width = 6)
 
 ```
